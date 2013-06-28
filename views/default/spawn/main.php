@@ -9,7 +9,7 @@ $entities = $vars['entities'];
 
 	<div class="spawn-entity">
 
-		<div class="spawn-info">
+		<div class="spawn-info spawn-left">
 
 			<span class="spawn-name">
 				<?php $item_name = elgg_echo(($subtype === '__base__') ? "item:$type" : "item:$type:$subtype"); ?>
@@ -25,17 +25,20 @@ $entities = $vars['entities'];
 			</span>
 		</div>
 
-		<div class="spawn-actions">
-
-		<?php if (intval($details['spawned']) == 0) : ?>
+		<div class="spawn-delete spawn-left">
+			<?php if (intval($details['spawned']) == 0) : ?>
 				<span class="spawn-delete">
 					<?php 
 						echo elgg_view('input/button', array(
+							'class' => 'elgg-requires-confirmation',
 							'value' => elgg_echo('spawn:items:delete', array($details['spawned'], $item_name)) 
 						));
 					?>
 				</span>
 			<?php endif; ?>
+		</div>
+		
+		<div class="spawn-actions">
 
 			<label for="<?php echo "$type:$subtype"; ?>"><?php echo elgg_echo('spawn:items:spawn', array($item_name)); ?></label>
 			<?php 
@@ -45,13 +48,24 @@ $entities = $vars['entities'];
 				)); 
 			?>
 
-			<span class="spawn-settings">
-				<a href="#">Settings</a>
-			</span>
+			<?php
+				echo elgg_view('output/url', array(
+					'href' => "#$type\\:$subtype\\:settings",	// escape colons for jQuery
+					'rel' => 'toggle',
+					'text' => elgg_echo('settings'),
+					'class' => 'spawn-settings elgg-icon elgg-icon-settings-alt'
+				)); 
+			?>
 			
 		</div>
 		
+		<div id="<?php echo "$type:$subtype:settings"; ?>" class="spawn-settings">
+			<?php echo elgg_view('spawn/entity/settings', array('type' => $type, 'subtype' => $subtype)); ?>
+		</div>
+		
+		
 	</div>
+	<div class="clearfix"></div>
 
 	<?php endforeach; ?>
 <?php endforeach; ?>
