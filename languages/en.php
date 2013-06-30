@@ -10,7 +10,13 @@ $english = array(
 	'spawn:instructions' => 'Here cometh a bit of instructions',
 	'spawn:items:delete' => 'Delete %s spawned %s',
 	'spawn:items:spawn' => 'Number of %s to spawn',
-
+		
+	'spawn:entity:count:total' => 'Total number of %s',
+	'spawn:entity:count:spawned' => 'Number of spawned %s',
+		
+	'spawn:entity:inspect:all' => 'View all %s',
+	'spawn:entity:inspect:spawned' => 'View all spawned %s',
+		
 	'spawn:property:entity:guid' => 'GUID (unique identifier)',
 	'spawn:property:entity:type' => 'Entity type',
 	'spawn:property:entity:subtype' => 'Entity subtype',

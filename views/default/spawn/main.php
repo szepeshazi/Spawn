@@ -16,13 +16,34 @@ $entities = $vars['entities'];
 				<?php echo $item_name; ?>			
 			</span>
 
-			<span class="spawn-count">
-				<?php echo $details['count']; ?>			
-			</span>
-
-			<span class="spawn-spawned-count">
+			<span class="spawn-spawned-count" title="<?php echo elgg_echo('spawn:entity:count:spawned', array($item_name)); ?>">
 				<?php echo $details['spawned']; ?>			
+				<?php 
+					if (true || $details['spawned']) {
+						echo elgg_view('output/url', array(
+							'href' => "admin/develop_tools/spawn/inspect",	// escape colons for jQuery
+							'text' => '',
+							'title' => elgg_echo('spawn:entity:inspect:spawned', array($item_name)),
+							'class' => 'spawn-inspect'
+						)); 
+					}
+				?>			
+				</span>
+
+			<span class="spawn-count" title="<?php echo elgg_echo('spawn:entity:count:total', array($item_name)); ?>">
+				<?php echo $details['count']; ?>
+				<?php 
+					if (true || $details['count']) {
+						echo elgg_view('output/url', array(
+							'href' => "admin/develop_tools/spawn/inspect",	// escape colons for jQuery
+							'text' => '',
+							'title' => elgg_echo('spawn:entity:inspect:all', array($item_name)),
+							'class' => 'spawn-inspect'
+						)); 
+					}
+				?>			
 			</span>
+				
 		</div>
 
 		<div class="spawn-delete spawn-left">
@@ -52,8 +73,8 @@ $entities = $vars['entities'];
 				echo elgg_view('output/url', array(
 					'href' => "#$type\\:$subtype\\:settings",	// escape colons for jQuery
 					'rel' => 'toggle',
-					'text' => elgg_echo('settings'),
-					'class' => 'spawn-settings elgg-icon elgg-icon-settings-alt'
+					'text' => elgg_view_icon('settings-alt') . elgg_echo('settings'),
+					'class' => 'spawn-settings'
 				)); 
 			?>
 			

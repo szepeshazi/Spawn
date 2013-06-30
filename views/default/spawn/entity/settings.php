@@ -18,16 +18,16 @@
 	<?php if (!$description['protected']): ?>
 		<div class="spawn-entity-property">
 
-			<span class="spawn-entity-property-name elgg-icon elgg-icon-delete-alt">
+			<div class="spawn-entity-property-name">
 				<?php echo elgg_echo("spawn:property:entity:$property"); ?>
-			</span>
+			</div>
 			
 			<?php
 				echo elgg_view('output/url', array(
 					'href' => "#$type\\:$subtype\\:$property\\:settings",	// escape colons for jQuery
 					'rel' => 'toggle',
-					'text' => elgg_echo('settings'),
-					'class' => 'spawn-settings elgg-icon elgg-icon-settings-alt'
+					'text' => elgg_view_icon('settings-alt') . elgg_echo('settings'),
+					'class' => 'spawn-settings'
 				)); 
 			?>			
 			
@@ -43,23 +43,33 @@
 	<?php if (!$description['protected']): ?>
 		<div class="spawn-entity-property">
 
-			<span class="spawn-entity-property-name">
+			<div class="spawn-entity-property-name">
 				<?php echo elgg_echo("spawn:property:$type:$property"); ?>
-			</span>
+			</div>
+			
+			<div class="spawn-entity-property-type">
+
+			</div>
 			
 			<?php
 				echo elgg_view('output/url', array(
 					'href' => "#$type\\:$subtype\\:$property\\:settings",	// escape colons for jQuery
 					'rel' => 'toggle',
-					'text' => elgg_echo('settings'),
-					'class' => 'spawn-settings elgg-icon elgg-icon-settings-alt'
+					'text' => elgg_view_icon('settings-alt') . elgg_echo('settings'),
+					'class' => 'spawn-settings'
 				)); 
 			?>			
 			
-			<div id="<?php echo "$type:$subtype:$property:settings"; ?>" class="spawn-settings">
+			<div id="<?php echo "$type:$subtype:$property:settings"; ?>" class="spawn-property-settings">
 				<?php echo "$type:$subtype:$property:settings"; ?>
 			</div>
 		
 		</div>
 	<?php endif; ?>
 <?php endforeach; ?>
+
+<div class="spawn-entity-property">
+	<span class="spawn-entity-property-name">
+		Add new property
+	</span>
+</div>
