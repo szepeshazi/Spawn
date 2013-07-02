@@ -94,6 +94,30 @@ div.spawn-entity div.spawn-settings {
     clear: both;
 }
 
+div.spawn-entity-property {
+	height: auto;
+}
+
+div.spawn-entity-property div {
+	float: left;
+	margin: 3px 0px;
+}
+
+div.spawn-entity-property-name {
+	width: 15%
+}
+
+div.spawn-entity-property-type {
+	width: 30%
+}
+
+div.spawn-entity-property-actions {
+	height: auto;
+}
+
+div.spawn-entity-property-settings {
+	display: none;
+}
 
 
 <?php if (false): ?></style><?php endif; ?>

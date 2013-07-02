@@ -101,7 +101,6 @@ function spawn_get_entity_properties() {
 		'owner_guid' => array('protected' => false, 'type' => 'int',
 			'content_types' => array(
 				'user',
-				'spawned_user',
 				'admin_user',
 				'current_user'
 			)
@@ -127,7 +126,6 @@ function spawn_get_entity_properties() {
 				'access_public',
 				'access_private',
 				'access_group',
-				'any_access_collection'
 			)
 		),
 		'time_created' => array('protected' => false, 'type' => 'int',
@@ -258,7 +256,7 @@ function spawn_get_site_properties() {
 		),
 		'description' => array('protected' => false, 'type' => 'text',
 			'content_types' => array(
-				'reference:title',
+				'reference:name',
 				'empty',
 				'lipsum',
 				'quotes',
