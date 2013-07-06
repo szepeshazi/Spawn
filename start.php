@@ -23,6 +23,14 @@ function spawn_init() {
 		elgg_register_library('spawn:utilities', $path . '/lib/utilities.php');
 		elgg_load_library('spawn:utilities');
 		
+		$spawn_js = elgg_get_simplecache_url('js', 'spawn/spawn.js');
+		elgg_register_simplecache_view('js/spawn/spawn.js');
+		elgg_register_js('spawn', $spawn_js);
+		elgg_load_js('spawn');		
+
+		elgg_register_css('jquery.ui.custom', "mod/$base_name/vendors/jquery-ui/jquery-ui-1.9.2.custom.css");
+		elgg_load_css('jquery.ui.custom');
+		
 		elgg_register_event_handler('pagesetup', 'system', 'spawn_setup_menu');
 		elgg_extend_view('css/admin', 'css/spawn');
 	}

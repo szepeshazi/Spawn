@@ -99,6 +99,38 @@ div.spawn-settings-head {
 	margin: 2px 0px 8px 0px;
 }
 
+div.spawn-settings-head-row * {
+	display: inline-block;
+}
+
+div.spawn-settings-head-row label {
+	width: 33%;
+}
+
+div.spawn-settings-head-row div.slider-block {
+	width: 60%
+}
+
+div.slider {
+	display: inline-block; 
+	width: 50%;
+	margin-left: 15px;
+}
+
+div.slider-block span {
+	font-style: italic;
+	font-size: 0.9em;
+}
+
+div.slider-overlay {
+    color: #9A0000;
+    font-weight: bold;
+    left: -150px;
+    position: relative;
+    width: 25px;
+    z-index: 50;
+}
+
 /***************** Icons ******************/
 
 span.spawn-icon {

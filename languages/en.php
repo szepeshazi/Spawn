@@ -68,6 +68,11 @@ $english = array(
 	'spawn:property:content_type:reference:name' => 'Same as the name',
 	'spawn:property:content_type:auto' => 'Automatically generated',
 		
+	'spawn:users:createicons' => 'Create icons for spawned users',
+	'spawn:users:createicons:percentage' => 'percent of users will have icons',
+	'spawn:users:createfriends' => 'Generate friend relationships among spawned users',
+	'spawn:users:createfriends:amount' => 'friend relationships on average',
+		
 );
 
 add_translation("en", $english);
