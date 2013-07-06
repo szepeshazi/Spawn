@@ -73,6 +73,7 @@ div.spawn-entity div.spawn-settings {
     border-left: 3px solid #9A0000;
     margin-left: 10px;
     padding-left: 4px;
+    width: 100%;
 }
 
 /************* Entity settings grid *************/
