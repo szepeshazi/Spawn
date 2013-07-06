@@ -20,7 +20,9 @@ function spawn_init() {
 		$path = elgg_get_plugins_path() . $base_name;
 		elgg_register_library('spawn:entities', $path . '/lib/entities.php');
 		elgg_load_library('spawn:entities');
-
+		elgg_register_library('spawn:utilities', $path . '/lib/utilities.php');
+		elgg_load_library('spawn:utilities');
+		
 		elgg_register_event_handler('pagesetup', 'system', 'spawn_setup_menu');
 		elgg_extend_view('css/admin', 'css/spawn');
 	}

@@ -4,14 +4,6 @@
 	$entity_properties = spawn_get_entity_properties();
 	$core_properties = spawn_get_core_properties($type);
 	
-	/*
-	$property_options = array();
-	foreach ($properties as $property => $description) {
-		if (!$description['protected']) {
-			$property_options[$property] = elgg_echo("spawn:property:$type:$property");
-		}
-	}
-	*/
 ?>
 
 <?php foreach ($entity_properties as $property => $description) : ?>
@@ -48,7 +40,6 @@
 		</div>
 	
 	</div>
-	<div class="clearfix"></div>
 	<?php endif; ?>
 <?php endforeach; ?>
 
@@ -80,12 +71,10 @@
 			)); 
 		?>
 		</div>
-		
 		<div id="<?php echo "$type:$subtype:$property:settings"; ?>" class="spawn-entity-property-settings">
 			<?php echo "$type:$subtype:$property:settings"; ?>
 		</div>
 	</div>
-	<div class="clearfix"></div>
 	<?php endif; ?>
 <?php endforeach; ?>
 
@@ -94,6 +83,5 @@
 		Add new property
 	</span>
 </div>
-<div class="clearfix"></div>
 
 

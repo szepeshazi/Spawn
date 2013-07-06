@@ -4,120 +4,125 @@
 
 <?php if (false): ?><style><?php endif; ?>
 
-div.spawn-list {
-    border: 1px solid #CCCCCC;
-    display: block;
+
+/************* Global styles *************/
+
+div.spawn-admin * {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-div.spawn-entity {
-    float: left;
-    margin: 5px;
-    width: 100%;
+div.spawn-admin input[type="text"] {
+    width: 64px;
 }
 
-div.spawn-entity div {
-	margin: 0px 5px;
-}
-
-
-div.spawn-info span {
-	float: right;
-	margin: 0px 5px;
-}
-
-div.spawn-info span.spawn-name {
-	float: left;
-	color: #9A0000;
-	font-weight: bold;
-	margin: 0px;
-}
-
-div.spawn-info span.spawn-count {
-	background: url(<?php echo $graphics_path ?>sum.png) no-repeat left center;
-	padding-left: 18px;
-}
-
-div.spawn-info span.spawn-spawned-count {
-	background: url(<?php echo $graphics_path ?>spawn.png) no-repeat left center;
-	padding-left: 18px;
-}
-
-div.spawn-info a.spawn-inspect {
-	background: url(<?php echo $graphics_path ?>zoom.png) no-repeat left center;
-	width: 16px;
-	height: 16px;
-	padding-left: 16px;
-	margin-left: 4px;
-}
-
-
-div.spawn-entity input[type="button"] {
-	font-size: 0.9em;
-}
-
-div.spawn-entity > div.spawn-left {
-    float: left;
-}
-
-div.spawn-entity > div.spawn-info {
-    width: 30%;
-}
-
-div.spawn-entity div.spawn-actions {
-    float: right;
-    margin-right: 5px;
-}
-
-div.spawn-entity div.spawn-actions label {
+div.spawn-admin label {
 	font-style: italic;
 	font-size: 0.9em;
 }
 
-div.spawn-entity div.spawn-actions a, div.spawn-entity div.spawn-settings a {
-	border-radius: 5px;
-	background-color: #FFDAD0;
-	padding: 5px 5px 5px 0px;
+div.spawn-entity, div.spawn-entity-property {
+	font-size: 0px;		/* Remove unwanted white space from inline-blocks */
+	margin: 2px 0px;
+}
+
+div.spawn-entity *, div.spawn-entity-property * {
+	font-size: 12px;	/* Restore font size for real content */
+}
+
+div.spawn-entity > div, div.spawn-details > *, div.spawn-entity-property > * {
+	display: inline-block;
+}
+
+/************* Entity grid *************/
+
+div.spawn-entity div.spawn-name {
+	width: 12%;
+}
+
+div.spawn-details {
+	width: 18%;
+}
+
+div.spawn-delete {
+	width: 27%;
+}
+
+div.spawn-entity div.spawn-actions {
+	width: 43%;
+	text-align: right;
+}
+
+
+div.spawn-details div.spawn-info {
+	margin-left: 5px;
+}
+
+div.spawn-name, .spawn-settings-toggle {
+	color: #9A0000;
 	font-weight: bold;
 }
 
-div.spawn-actions * {
-    margin: 0 5px;
-}
 
-div.spawn-actions input[type="text"] {
-    width: 64px;
+div.spawn-entity div.spawn-settings, div.spawn-entity div.spawn-entity-property-settings {
+	display: none;
 }
 
 div.spawn-entity div.spawn-settings {
-    display: none;
-    width: 100%;
-    clear: both;
+    border-left: 3px solid #9A0000;
+    margin-left: 10px;
+    padding-left: 4px;
 }
 
-div.spawn-entity-property {
-	height: auto;
-}
-
-div.spawn-entity-property div {
-	float: left;
-	margin: 3px 0px;
-}
+/************* Entity settings grid *************/
 
 div.spawn-entity-property-name {
 	width: 15%
 }
 
 div.spawn-entity-property-type {
-	width: 30%
+	width: 25%
 }
 
 div.spawn-entity-property-actions {
-	height: auto;
+	width: 15%
 }
 
-div.spawn-entity-property-settings {
-	display: none;
+div.spawn-entity-property-type select {
+	width: 100%;
 }
 
+div.spawn-settings-head {
+	border-bottom: 1px solid #9A0000; 
+	margin: 2px 0px 8px 0px;
+}
+
+/***************** Icons ******************/
+
+span.spawn-icon {
+	display: inline-block;
+	background: url(<?php echo $graphics_path ?>spawn-sprites.png) no-repeat left;
+	width: 16px;
+	height: 16px;
+	margin: 0 2px;
+	vertical-align: text-bottom;
+}
+
+span.spawn-icon-spawned {
+	background-position: 0px 0px;
+}
+
+span.spawn-icon-count {
+	background-position: 0px -16px;
+}
+
+span.spawn-icon-inspect {
+	background-position: 0px -32px;
+}
+
+span.spawn-icon-empty {
+	background: none;
+}
 
 <?php if (false): ?></style><?php endif; ?>
