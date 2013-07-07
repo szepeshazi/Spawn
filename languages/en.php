@@ -76,6 +76,11 @@ $english = array(
 	'spawn:users:createicons:percentage' => 'percent of users will have icons',
 	'spawn:users:createfriends' => 'Generate friend relationships among spawned users',
 	'spawn:users:createfriends:amount' => 'friend relationships on average',
+
+	'spawn:groups:createicons' => 'Create icons for spawned groups',
+	'spawn:groups:memberships' => 'Auto-join users to spawned groups',
+	'spawn:groups:membership:amount:pre' => 'Groups will have an average of',
+	'spawn:groups:membership:amount:post' => 'members'
 		
 );
 
