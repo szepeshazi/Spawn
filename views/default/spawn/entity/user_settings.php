@@ -11,7 +11,7 @@
 				'data-rel' => 'usericons-percentage-block'
 			));
 		?>
-		<label for="usericons"><?php echo elgg_echo('spawn:users:createicons'); ?></label>
+		<label for="usericons" class="short"><?php echo elgg_echo('spawn:users:createicons'); ?></label>
 		<div id="usericons-percentage-block" class="slider-block">
 			<div id="usericons-percentage" class="slider"></div>
 			<input type="hidden" name="usericons-percentage" value="75"></input>
@@ -29,7 +29,7 @@
 				'data-rel' => 'friends-amount-block'
 			)); 
 		?>
-		<label for="friendrelations"><?php echo elgg_echo('spawn:users:createfriends'); ?></label>
+		<label for="friendrelations" class="short"><?php echo elgg_echo('spawn:users:createfriends'); ?></label>
 		<div id="friends-amount-block" class="slider-block">
 			<div id="friends-amount" class="slider"></div>
 			<input type="hidden" name="friends-amount" value="20"></input>

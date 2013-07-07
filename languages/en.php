@@ -17,6 +17,10 @@ $english = array(
 	'spawn:entity:inspect:all' => 'View all %s',
 	'spawn:entity:inspect:spawned' => 'View all spawned %s',
 
+	'spawn:settings:createriver' => 'Create river entries for generated content',
+	'spawn:settings:containspawn' => 'Contain all relationships and ownerships to spawned entities',
+	'spawn:settings:containcurrent' => 'Use only currently spawned entities for containment (don\'t mix in earlier spawned entities)',
+		
 	'spawn:settings:advanced' => 'Advanced settings',
 		
 	'spawn:property:entity:guid' => 'GUID',

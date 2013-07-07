@@ -35,6 +35,12 @@ div.spawn-entity > div, div.spawn-details > *, div.spawn-entity-property > * {
 	display: inline-block;
 }
 
+div.spawn-global-settings {
+	border-bottom: 2px #9A0000 solid; 
+	margin-bottom: 10px; 
+	padding-bottom:10px;
+}
+
 /************* Entity grid *************/
 
 div.spawn-entity div.spawn-name {
@@ -103,7 +109,7 @@ div.spawn-settings-head-row * {
 	display: inline-block;
 }
 
-div.spawn-settings-head-row label {
+div.spawn-settings-head-row label.short {
 	width: 33%;
 }
 

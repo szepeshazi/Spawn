@@ -1,9 +1,8 @@
 <div class="spawn-admin spawn-list">
 
-<?php 
-$entities = $vars['entities'];
-?>
+<?php echo elgg_view('spawn/global_settings'); ?>
 
+<?php $entities = $vars['entities']; ?>
 <?php foreach ($entities as $type => $subtypes): ?>
 	<?php foreach ($subtypes as $subtype => $details): ?>
 
@@ -89,5 +88,7 @@ $entities = $vars['entities'];
 
 	<?php endforeach; ?>
 <?php endforeach; ?>
+
+<?php echo elgg_view('spawn/footer'); ?>
 
 </div>
