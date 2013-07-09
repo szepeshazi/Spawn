@@ -6,7 +6,7 @@
 <?php foreach ($entities as $type => $subtypes): ?>
 	<?php foreach ($subtypes as $subtype => $details): ?>
 
-	<div class="spawn-entity">
+	<div id="entity:<?php echo "$type:$subtype"; ?>" class="spawn-entity">
 
 		<div class="spawn-name">
 			<?php $item_name = elgg_echo(($subtype === '__base__') ? "item:$type" : "item:$type:$subtype"); ?>
@@ -90,5 +90,8 @@
 <?php endforeach; ?>
 
 <?php echo elgg_view('spawn/footer'); ?>
+
+<?php echo elgg_view('spawn/property/templates'); ?>
+
 
 </div>

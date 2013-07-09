@@ -8,7 +8,7 @@
 
 <?php foreach ($entity_properties as $property => $description) : ?>
 	<?php if (!$description['protected']): ?>
-	<div class="spawn-entity-property">
+	<div id="property:<?php echo "$type:$subtype:$property"; ?>" class="spawn-entity-property">
 
 		<div class="spawn-entity-property-name">
 			<?php echo elgg_echo("spawn:property:entity:$property"); ?>
@@ -20,7 +20,10 @@
 			foreach ($description['content_types'] as $content_type) {
 				$property_options[$content_type] = elgg_echo("spawn:property:content_type:$content_type");
 			}
-			echo elgg_view('input/dropdown', array('options_values' => $property_options)); 
+			echo elgg_view('input/dropdown', array(
+				'name' => "property_type:$type:$subtype:$property",
+				'options_values' => $property_options
+			)); 
 		?>
 		</div>
 		
@@ -57,7 +60,10 @@
 			foreach ($description['content_types'] as $content_type) {
 				$property_options[$content_type] = elgg_echo("spawn:property:content_type:$content_type");
 			}
-			echo elgg_view('input/dropdown', array('options_values' => $property_options)); 
+			echo elgg_view('input/dropdown', array(
+				'name' => "property_type:$type:$subtype:$property",
+				'options_values' => $property_options
+			)); 
 		?>
 		</div>
 		
@@ -78,10 +84,4 @@
 	<?php endif; ?>
 <?php endforeach; ?>
 
-<div class="spawn-entity-property">
-	<span class="spawn-entity-property-name">
-		Add new property
-	</span>
-</div>
-
-
+<?php echo elgg_view('spawn/property/add'); ?>

@@ -79,6 +79,30 @@ function spawn_get_spawned_entity_statistics() {
 	return $entity_stats;
 }
 
+function spawn_get_all_content_types() {
+	return array(
+		'user',
+		'admin_user',
+		'current_user',
+		'reference:owner_guid',
+		'reference:site_guid',
+		'user',
+		'admin_user',
+		'current_user',
+		'group',
+		'album',
+		'current_site',
+		'real_time',
+		'fixed',
+		'random_interval',
+		'empty',
+		'userdata',
+		'regexp',
+		'lipsum',
+		'quotes',
+	);
+}
+
 /*
  * @property string $type           	object, user, group, or site (read-only after save)
  * @property string $subtype        	Further clarifies the nature of the entity (read-only after save)

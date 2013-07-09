@@ -13,6 +13,28 @@ spawn.toggler = function() {
 	});
 };
 
+spawn.addPropertyBinding = function() {
+	$('a.spawn-add-property').live('click', function() {
+		var $template = $('div#spawn-new-property').clone();
+		var $this = $(this);
+		$template.first().removeAttr('id');
+
+		var parentId = $this.closest('div.spawn-entity').attr('id');
+		var idParts = parentId.split(":");
+		$template.find('select').attr('name', 'property_type:' + idParts[1] + ':' + idParts[2] + ':new[]');
+		
+		$this.parent().before($template);
+		
+	});
+};
+
+spawn.removePropertyBinding = function() {
+	$('button.spawn-property-remove-button').live('click', function() {
+		var $propertyDiv = $(this).closest('div.spawn-entity-property');
+		$propertyDiv.remove();
+	});
+};
+
 spawn.init = function() {
 	spawn.toggler();
 	$('div.slider').slider({
@@ -23,6 +45,8 @@ spawn.init = function() {
         	$(this).next().val(ui.value).next().text(ui.value);
     	}
 	});
+	spawn.addPropertyBinding();
+	spawn.removePropertyBinding();
 };
 
 elgg.register_hook_handler('init', 'system', spawn.init);

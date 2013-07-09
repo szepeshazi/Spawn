@@ -17,6 +17,11 @@ div.spawn-admin input[type="text"] {
     width: 64px;
 }
 
+div.spawn-admin div.spawn-entity-property-name input[type="text"] {
+    width: auto;
+    padding: 2px;
+}
+
 div.spawn-admin label {
 	font-style: italic;
 	font-size: 0.9em;
@@ -137,6 +142,12 @@ div.slider-overlay {
     z-index: 50;
 }
 
+/************* Clonable templates **************/
+
+div.spawn-templates {
+	display: none;
+}
+
 /***************** Icons ******************/
 
 span.spawn-icon {
@@ -158,6 +169,10 @@ span.spawn-icon-count {
 
 span.spawn-icon-inspect {
 	background-position: 0px -32px;
+}
+
+span.spawn-icon-add {
+	background-position: 0px -48px;
 }
 
 span.spawn-icon-empty {
