@@ -80,7 +80,12 @@ $english = array(
 	'spawn:groups:createicons' => 'Create icons for spawned groups',
 	'spawn:groups:memberships' => 'Auto-join users to spawned groups',
 	'spawn:groups:membership:amount:pre' => 'Groups will have an average of',
-	'spawn:groups:membership:amount:post' => 'members'
+	'spawn:groups:membership:amount:post' => 'members',
+		
+	'spawn:item:user:singular' => 'User',
+	'spawn:item:object:singular' => 'Object',
+	'spawn:item:group:singular' => 'Group',
+	'spawn:item:site:singular' => 'Site',
 		
 );
 

@@ -1,4 +1,4 @@
-<div class="spawn-property-templates spawn-templates">
+<div class="spawn-entity-templates spawn-templates">
 <?php
 /**
  * Auto parse and include once all template views within the "templates" subdirectory

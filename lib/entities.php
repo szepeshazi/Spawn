@@ -1,39 +1,49 @@
 <?php
 
 function spawn_get_entity_statistics() {
-	$entity_types = get_registered_entity_types();
-	$statistics = get_entity_statistics();
-	$spanwed_statistics = spawn_get_spawned_entity_statistics();
 
-	$results = array();
-	foreach ($entity_types as $entity_type => $subtypes) {
-		if (!isset($results[$entity_type])) {
-			$results[$entity_type] = array();
-		}
-		if (empty($subtypes)) {
-			$results[$entity_type]['__base__'] = array('count' => 0, 'spawned' => 0);
-		} else {
-			foreach ($subtypes as $subtype) {
-				$results[$entity_type][$subtype] = array('count' => 0, 'spawned' => 0);
+	$results = null;
+	global $SESSION;
+	
+	// Reuse entity statistics in subsequent requests during this session
+	if ($SESSION->offsetExists('spawn_entity_stat')) {
+		$results = json_decode($SESSION->get('spawn_entity_stat'), true);
+	} else {
+		$entity_types = get_registered_entity_types();
+		$statistics = get_entity_statistics();
+		$spanwed_statistics = spawn_get_spawned_entity_statistics();
+	
+		$results = array();
+		foreach ($entity_types as $entity_type => $subtypes) {
+			if (!isset($results[$entity_type])) {
+				$results[$entity_type] = array();
+			}
+			if (empty($subtypes)) {
+				$results[$entity_type]['__base__'] = array('count' => 0, 'spawned' => 0);
+			} else {
+				foreach ($subtypes as $subtype) {
+					$results[$entity_type][$subtype] = array('count' => 0, 'spawned' => 0);
+				}
 			}
 		}
-	}
-
-	foreach ($statistics as $entity_type => $subtypes) {
-		if (!isset($results[$entity_type])) {
-			$results[$entity_type] = array();
+	
+		foreach ($statistics as $entity_type => $subtypes) {
+			if (!isset($results[$entity_type])) {
+				$results[$entity_type] = array();
+			}
+			foreach ($subtypes as $subtype => $count) {
+				$results[$entity_type][$subtype] = array('count' => $count, 'spawned' => 0);
+			}
 		}
-		foreach ($subtypes as $subtype => $count) {
-			$results[$entity_type][$subtype] = array('count' => $count, 'spawned' => 0);
+	
+		foreach ($spanwed_statistics as $entity_type => $subtypes) {
+			foreach ($subtypes as $subtype => $count) {
+				$results[$entity_type][$subtype]['spawned'] = $count;
+			}
 		}
+	
+		$SESSION->set('spawn_entity_stat', json_encode($results));
 	}
-
-	foreach ($spanwed_statistics as $entity_type => $subtypes) {
-		foreach ($subtypes as $subtype => $count) {
-			$results[$entity_type][$subtype]['spawned'] = $count;
-		}
-	}
-
 	return $results;
 }
 

@@ -89,9 +89,12 @@
 	<?php endforeach; ?>
 <?php endforeach; ?>
 
+<?php echo elgg_view('spawn/entity/add'); ?>
+
 <?php echo elgg_view('spawn/footer'); ?>
 
-<?php echo elgg_view('spawn/property/templates'); ?>
+<?php echo elgg_view('spawn/entity/templates', array('entities' => $entities)); ?>
+<?php echo elgg_view('spawn/property/templates', array('entities' => $entities)); ?>
 
 
 </div>
