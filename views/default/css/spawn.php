@@ -167,11 +167,11 @@ span.spawn-icon-count {
 	background-position: 0px -16px;
 }
 
-span.spawn-icon-inspect {
+span.spawn-icon-add {
 	background-position: 0px -32px;
 }
 
-span.spawn-icon-add {
+span.spawn-icon-inspect {
 	background-position: 0px -48px;
 }
 
