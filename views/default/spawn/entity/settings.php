@@ -1,5 +1,5 @@
 <?php 
-	extract(array_intersect_key($vars, array('type' => true, 'subtype' => true))); 
+	extract(array_intersect_key($vars, array('type' => true, 'subtype' => true)));
 
 	$entity_properties = spawn_get_entity_properties();
 	$core_properties = spawn_get_core_properties($type);
@@ -37,12 +37,12 @@
 			)); 
 		?>
 		</div>
-		
-		<div id="<?php echo "$type:$subtype:$property:settings"; ?>" class="spawn-entity-property-settings">
-			<?php echo "$type:$subtype:$property:settings"; ?>
-		</div>
-	
 	</div>
+	<div id="<?php echo "$type:$subtype:$property:settings"; ?>" class="spawn-entity-property-settings">
+		<div class="spawn-property-settings-spacer">&nbsp;</div>
+		<?php echo elgg_view("spawn/property/advanced_settings/" . $description['content_types'][0]); ?>
+	</div>
+	
 	<?php endif; ?>
 <?php endforeach; ?>
 

@@ -87,6 +87,12 @@ $english = array(
 	'spawn:item:group:singular' => 'Group',
 	'spawn:item:site:singular' => 'Site',
 		
+	'spawn:settings:advanced:include_guids' => 'Restrict to GUIDs',
+	'spawn:settings:advanced:include_guids:info' => 'List of comma separated GUID values to restrict the spawn process to.',
+	'spawn:settings:advanced:exclude_guids' => 'Exclude GUIDs',
+	'spawn:settings:advanced:exclude_guids:info' => 'List of comma separated GUID values to exclude from the spawn process.',
+		
+		
 );
 
 add_translation("en", $english);

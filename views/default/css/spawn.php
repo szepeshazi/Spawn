@@ -46,6 +46,24 @@ div.spawn-global-settings {
 	padding-bottom:10px;
 }
 
+div.spawn-admin input[type="text"].medium {
+	width: 240px;
+}
+
+div.spawn-admin input[type="text"].long {
+	width: 400px;
+}
+
+
+div.spawn-admin div.label-short {
+	width: 15%;
+}
+
+div.spawn-admin div.label-long {
+	width: 25%;
+}
+
+
 /************* Entity grid *************/
 
 div.spawn-entity div.spawn-name {
@@ -76,8 +94,20 @@ div.spawn-name, .spawn-settings-toggle {
 }
 
 
-div.spawn-entity div.spawn-settings, div.spawn-entity div.spawn-entity-property-settings {
+div.spawn-entity div.spawn-settings {
 	display: none;
+}
+
+div.spawn-entity div.spawn-entity-property-settings {
+	display: block;
+}
+
+div.spawn-entity-property-settings div {
+	display: inline-block;
+}
+
+div.spawn-entity-property-settings div.spawn-property-settings-spacer {
+	width: 15%;
 }
 
 div.spawn-entity div.spawn-settings {
@@ -142,6 +172,20 @@ div.slider-overlay {
     z-index: 50;
 }
 
+div.spawn-property-advanced-settings {
+	border-left: 3px solid #9A0000; 
+	margin: 3px; 
+	padding-left: 10px;
+}
+ 
+div.spawn-property-advanced-settings div {
+	display: block;
+}
+
+div.spawn-advanced-settings-row div {	
+	display: inline-block;
+}
+ 
 /************* Clonable templates **************/
 
 div.spawn-templates {
@@ -174,6 +218,11 @@ span.spawn-icon-add {
 span.spawn-icon-inspect {
 	background-position: 0px -48px;
 }
+
+span.spawn-icon-question {
+	background-position: 0px -64px;
+}
+
 
 span.spawn-icon-empty {
 	background: none;

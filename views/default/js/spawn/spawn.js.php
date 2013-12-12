@@ -1,4 +1,4 @@
-<?php if (false): ?><script type="text/javascript"><?php endif; ?>
+<?php if (false) : ?><script type="text/javascript"><?php endif; ?>
 
 elgg.provide('spawn');
 
@@ -18,7 +18,7 @@ spawn.addPropertyBinding = function() {
 		var $template = $('div#spawn-new-property').clone();
 		var $this = $(this);
 
-		// Remove the cloned div's id to aviod duplicate nodes
+		// Remove the cloned div's id to avoid duplicate nodes
 		$template.first().removeAttr('id');
 
 		// Determine the proper name for property-type selector
@@ -35,7 +35,7 @@ spawn.addEntityBinding = function() {
 		var $template = $('div#spawn-new-entity').clone();
 		var $this = $(this);
 
-		// Remove the cloned div's id to aviod duplicate nodes
+		// Remove the cloned div's id to avoid duplicate nodes
 		$template.first().removeAttr('id');
 		
 		$this.parent().before($template);
@@ -56,8 +56,29 @@ spawn.removePropertyBinding = function() {
 	});
 };
 
+spawn.changePropertyTypeBinding = function() {
+	$('div.spawn-entity-property-type select.elgg-input-dropdown').change(function() {
+		var newPropertyType = $(this).val();
+		var $propertySettingsDiv = $(this).parents('div.spawn-entity-property').next('div.spawn-entity-property-settings');
+		var $propertyTemplate = $('div.spawn-property-templates.advanced-settings').find('div.settings-type-' + newPropertyType).clone();
+		$propertySettingsDiv.find('div.spawn-property-advanced-settings').remove();
+		$propertySettingsDiv.append($propertyTemplate);
+	});
+};
+
 spawn.init = function() {
+
+	// inline-block style toggler
+	// $('div.spawn-entity-property-settings').hide();
+	$('div.spawn-entity-property-settings').each(function() {
+		// $height = $(this).height();
+		// $(this).css('height', $height);
+		$(this).hide();
+	});
+
+	// Checkbox state dependent div displays
 	spawn.toggler();
+
 	$('div.slider').slider({
 		create: function(event, ui){
 	        $(this).slider('value', $(this).next().val());
@@ -66,10 +87,13 @@ spawn.init = function() {
         	$(this).next().val(ui.value).next().text(ui.value);
     	}
 	});
+	
+	// Initialize different UI change bindings
 	spawn.addPropertyBinding();
 	spawn.removePropertyBinding();
 	spawn.addEntityBinding();
 	spawn.removeEntityBinding();
+	spawn.changePropertyTypeBinding();
 };
 
 elgg.register_hook_handler('init', 'system', spawn.init);
